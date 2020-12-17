@@ -11,3 +11,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+
+.image {
+  max-height: 80%;
+}
+
+.selected {
+  color: brown;
+}
+
+.not-selected {
+  color: grey;
+}
+
+svg {
+  font-size: 28vh !important;
+}
+
+button {
+  display: none;
+}
+
+.page-number {
+  color: azure;
+}
