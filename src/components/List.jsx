@@ -42,7 +42,8 @@ const List  = ({category}) => {
       {list.map(file => <ListItem 
         category={category}
         selected={list.indexOf(file) === count}
-        file={file}  
+        file={file}
+        key={list.indexOf(file)}
       />)}
     </div>
   );

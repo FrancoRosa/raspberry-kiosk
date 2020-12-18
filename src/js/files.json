@@ -1,11 +1,11 @@
 {
   "fig": [
     "landscape.jpg",
-    "sch.jpg"
+    "sch.jpeg"
   ],
   "pdf": [
-    "automata.jpg",
-    "guide.jpg"
+    "automata.pdf",
+    "guide.pdf"
   ],
   "vid": [
     "animation.mp4",

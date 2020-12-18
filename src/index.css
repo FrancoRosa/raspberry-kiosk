@@ -52,6 +52,11 @@ button {
 .page-number {
   color: gray;
   position: absolute;
+  bottom: 0px;
+}
+
+.document-status{
+  color: gray;
 }
 
 .list {
