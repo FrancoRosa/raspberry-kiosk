@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import useKey from '../js/useKey';
 import Icon from './Icon'
 
-
 const Home  = () => {
   const links = 3
   const [count, setCount] = useState(0);
@@ -25,21 +24,9 @@ const Home  = () => {
 
   return (
     <div className="home">
-      <Icon
-        selected={0 === count}
-        category="vid"
-        file="animation.mp4"
-      />
-      <Icon
-        selected={1 === count}
-        category="pdf"
-        file="guide.pdf"
-      />
-      <Icon
-        selected={2 === count}
-        category="fig"
-        file="landscape.jpg"
-      />
+      <Icon selected={0 === count} category="pdf" />
+      <Icon selected={1 === count} category="fig" />
+      <Icon selected={2 === count} category="vid" />
     </div>
   );
 }

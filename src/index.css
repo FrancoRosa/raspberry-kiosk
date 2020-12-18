@@ -37,16 +37,12 @@ code {
 }
 
 .selected {
-  color: brown;
+  background-color: grey;
+  height: 250px;
 }
 
 .not-selected {
-  color: grey;
-}
-
-svg {
-  font-size: 28vh !important;
-  padding: 0.2em;
+  height: 250px;
 }
 
 button {
@@ -56,7 +52,43 @@ button {
 .page-number {
   color: gray;
   position: absolute;
-  bottom: 0;
-  padding: 0;
-  margin: 0;
+}
+
+.list {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 100vh;
+  overflow: auto;
+}
+
+.selected-i {
+  background-color: grey;
+  font-size: 20px;
+}
+
+.not-selected-i {
+  font-size: 20px;
+}
+
+.list > * {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.list > a > span {
+  padding: 0 1em;
+  font-size: 2em;
+}
+
+.list > a {
+  border: solid 1px;
+  border-radius: 5px;
+  margin: 0.5em 0;
+  padding: 0.2em;
+}
+
+svg {
+  font-size: 1.7em !important;
 }

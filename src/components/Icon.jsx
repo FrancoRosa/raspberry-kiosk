@@ -1,23 +1,21 @@
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVideo, faFile, faImage } from '@fortawesome/free-solid-svg-icons';
 
 const categoryIcon = (category, mode) => {
   switch(category) {
     case 'vid':
-      return <FontAwesomeIcon className={mode} icon={faVideo} />
+      return <img src="/icons/vid-icon.png" className={mode} alt="icon"/>
     case 'pdf':
-      return <FontAwesomeIcon className={mode} icon={faFile} />
+      return <img src="/icons/pdf-icon.png" className={mode} alt="icon"/>
     case 'fig':
-      return <FontAwesomeIcon className={mode} icon={faImage} />
+      return <img src="/icons/fig-icon.png" className={mode} alt="icon"/>
     default:
       return;
   };
 };
 
-const Icon = ({category, selected, file}) => {
+const Icon = ({category, selected }) => {
   return (
-    <Link to={`/${category}/${file}`}>
+    <Link to={`/${category}s`}>
       {categoryIcon(category, selected ? 'selected' : 'not-selected')}
     </Link>
   );

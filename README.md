@@ -4,15 +4,14 @@ React app and customization scripts to make a Media device from a RPi
 
 ## Keyboard maping
 
-RPI_GPIO  -- KEY -- LINUX_CODE -- ACTION
-
-4             W         17          UP
-17            S         31          DOWN
-27            A         30          LEFT
-22            D         32          RIGHT
-
-23            O         24          BACK
-25            P         25          ENTER
+|RPI_GPIO | KEY  | LINUX_CODE | ACTION |
+|---------|------|------------|--------|
+|4        | W    | 17         | UP     | 
+|17       | S    | 31         | DOWN   | 
+|27       | A    | 30         | LEFT   | 
+|22       | D    | 32         | RIGHT  | 
+|23       | O    | 24         | BACK   | 
+|25       | P    | 25         | ENTER  |
 
 To map GPIO inputs to keystrokes, you have to modify this file
 ```

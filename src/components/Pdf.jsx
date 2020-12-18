@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import useKey from '../js/useKey';
 import { useParams } from 'react-router-dom';
-pdfjs.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.js';
+
+// pdfjs.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.js';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const Pdf = ({ history }) => {
   const [numPages, setNumPages] = useState(null);
