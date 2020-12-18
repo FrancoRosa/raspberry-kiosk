@@ -40,6 +40,16 @@ const Home  = () => {
         category="fig"
         file="sch.jpeg"
       />
+      <Icon
+        selected={3 === count}
+        category="pdf"
+        file="automata.pdf"
+      />
+      <Icon
+        selected={4 === count}
+        category="vid"
+        file="watermelon.mp4"
+      />
     </div>
   );
 }
