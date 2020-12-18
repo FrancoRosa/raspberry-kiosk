@@ -1,4 +1,4 @@
 # raspberry-kiosk
 
-Educational media app, it uses a custom keyboard to navigate throug the app
+React app and customization scripts to make a Media device from a RPi
 
