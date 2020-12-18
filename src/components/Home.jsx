@@ -38,17 +38,7 @@ const Home  = () => {
       <Icon
         selected={2 === count}
         category="fig"
-        file="sch.jpeg"
-      />
-      <Icon
-        selected={3 === count}
-        category="pdf"
-        file="automata.pdf"
-      />
-      <Icon
-        selected={4 === count}
-        category="vid"
-        file="watermelon.mp4"
+        file="landscape.jpg"
       />
     </div>
   );

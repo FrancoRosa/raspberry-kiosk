@@ -11,7 +11,6 @@ const Figure = ({ history }) => {
   const { id } = useParams();
   return (
     <div className="container">
-      <p>This is a figure</p>
       <img className="image" src={`/fig/${id}`} alt="figure"/>
     </div>
   );

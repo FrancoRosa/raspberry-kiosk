@@ -15,7 +15,7 @@ const Video = ({ history }) => {
   return (
     <div className="container">
       <p>This is a video</p>
-      <ReactPlayer 
+      <ReactPlayer width="840px"
         url={`/vid/${id}`}
         playing={true}
         controls

@@ -29,10 +29,11 @@ code {
   justify-content: space-around;
   align-items: center;
   background-color: black;
+  flex-wrap: wrap;
 }
 
 .image {
-  max-height: 80%;
+  height: 480px;
 }
 
 .selected {
@@ -45,6 +46,7 @@ code {
 
 svg {
   font-size: 28vh !important;
+  padding: 0.2em;
 }
 
 button {
@@ -52,5 +54,9 @@ button {
 }
 
 .page-number {
-  color: azure;
+  color: gray;
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
 }

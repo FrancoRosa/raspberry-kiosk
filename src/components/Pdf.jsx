@@ -56,7 +56,7 @@ const Pdf = ({ history }) => {
         file={`/pdf/${id}`}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        <Page pageNumber={pageNumber} />
+        <Page pageNumber={pageNumber} height={480}/>
       </Document>
       <p className="page-number">Page {pageNumber} of {numPages}</p>
       <div className="pdf-controls">
