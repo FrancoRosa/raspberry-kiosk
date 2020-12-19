@@ -1,8 +1,8 @@
 // import pdf from '../pdf/prof.pdf';
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import useKey from '../js/useKey';
 import { useParams } from 'react-router-dom';
+import useKey from '../js/useKey';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.js';
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
@@ -35,7 +35,7 @@ const Pdf = ({ history }) => {
   }
 
   const returnToMenu = () => {
-    history.push('/');
+    history.push('/pdfs');
   }
 
   const prevPage = () => {

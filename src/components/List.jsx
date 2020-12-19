@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import files from '../js/files.json';
 import useKey from '../js/useKey';
 import ListItem from './ListItem';
+import { useHistory } from "react-router-dom";
 
-const List  = ({category}) => {
+const List = ({ category }) => {
+  
+  const history = useHistory();
+  
   const getList = category => {
     switch (category) {
       case 'pdf':
-        return  files.pdf;
+        return files.pdf;
       case 'vid':
-        return  files.vid;
+        return files.vid;
       case 'fig':
-        return  files.fig;
+        return files.fig;
       default:
         return;
     }
@@ -30,12 +34,16 @@ const List  = ({category}) => {
 
   const selectItem = () => {
     document.querySelector('.selected-i').click();
-    console.log('P')
   }
 
-  useKey("KeyW", prevItem);
-  useKey("KeyS", nextItem);
+  const returnToMenu = () => {
+    history.push('/');
+  }
+
+  useKey("KeyA", prevItem);
+  useKey("KeyD", nextItem);
   useKey("KeyP", selectItem);
+  useKey("KeyO", returnToMenu);
 
   return (
     <div className="list">

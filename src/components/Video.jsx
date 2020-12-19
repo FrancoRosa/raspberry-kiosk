@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const Video = ({ history }) => {
   
   const returnToMenu = () => {
-    history.push('/');
+    history.push('/vids');
   }
   
   useKey("KeyO", returnToMenu);

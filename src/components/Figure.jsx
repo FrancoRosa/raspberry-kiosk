@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 const Figure = ({ history }) => {
   
   const returnToMenu = () => {
-    history.push('/');
+    history.push('/figs');
   }
 
   useKey('KeyO', returnToMenu);
