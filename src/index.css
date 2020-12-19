@@ -73,9 +73,6 @@ button {
   background-color: grey;
 }
 
-.not-selected-i {
-}
-
 .list > * {
   text-decoration: none;
   color: lightgray;
