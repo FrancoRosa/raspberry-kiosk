@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import files from '../js/files.json';
 import useKey from '../js/useKey';
 import ListItem from './ListItem';
 import { useHistory } from "react-router-dom";
 
 const List = ({ category }) => {
+  fetch('js/files.json')
+  .then(r => console.log(r));
   
   const history = useHistory();
   
