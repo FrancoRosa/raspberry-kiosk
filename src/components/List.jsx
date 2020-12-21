@@ -4,22 +4,13 @@ import ListItem from './ListItem';
 import { useHistory } from "react-router-dom";
 
 const List = ({ category }) => {
-  let links = 0;
-  let prelist = [];
-
-  const getFiles = async () =>  {
-    const response = await fetch('files.json');
-    const files = await response.json()
-    prelist = getList(category, files);
-    links = prelist.length;
-    setList(prelist);
-  }
-
-  useEffect(getFiles, []);
-
   const history = useHistory();
+  const [count, setCount] = useState(0);
+  const [list, setList] = useState([]);
+  const [flag, setFlag] = useState(false);
+  const [links, setLinks] = useState(0);
+
   const getList = (category, files) => {
-    
     switch (category) {
       case 'pdf':
         return files.pdf;
@@ -32,9 +23,18 @@ const List = ({ category }) => {
     }
   }
 
-  const [count, setCount] = useState(0);
-  const [list, setList] = useState([]);
-  
+  const getFiles = async () =>  {
+    if (!flag) {
+      const response = await fetch('files.json');
+      const files = await response.json()
+      setList(getList(category, files));
+      setLinks(list.length);
+      setFlag(true);
+    }
+  }
+
+  getFiles();
+
   const nextItem = () => {
     if (count < links - 1) setCount(count + 1);
   }
