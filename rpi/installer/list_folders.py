@@ -4,7 +4,7 @@ import json
 
 path = '/boot/raspberry-kiosk/public/'
 path = '../raspberry-kiosk/public/'
-
+path = '../raspberry-kiosk/build/'
 directories = [f for f in listdir(path) if isdir(join(path, f))]
 
 tree = {}
@@ -14,5 +14,7 @@ for directory in directories:
   files = [f for f in listdir(path+directory)]
   tree[directory] = files
 
+print('>>>>>>>>>>>>>>')
+print(tree)
 with open(path + 'files.json', 'w') as outfile:
     json.dump(tree, outfile)

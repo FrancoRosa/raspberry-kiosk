@@ -1,0 +1,14 @@
+{
+  "fig": [
+    "landscape.jpg",
+    "penguin.jpeg"
+  ],
+  "pdf": [
+    "automata.pdf",
+    "guide.pdf"
+  ],
+  "vid": [
+    "animation.mp4",
+    "watermelon.mp4"
+  ]
+}
