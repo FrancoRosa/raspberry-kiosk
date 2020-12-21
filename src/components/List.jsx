@@ -13,7 +13,6 @@ const List = ({ category }) => {
     prelist = getList(category, files);
     links = prelist.length;
     setList(prelist);
-    console.log(prelist);
   }
 
   useEffect(getFiles, []);
