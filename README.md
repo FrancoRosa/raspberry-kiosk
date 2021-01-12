@@ -68,3 +68,9 @@ https://raspberrypi.stackexchange.com/questions/101552/configure-raspberry-pi-to
 ### Customize chromium
 https://www.raspberrypi.org/forums/viewtopic.php?t=205426#:~:text=Full-screen%20mode%3A%20chromium-,out%20of%20full-screen%20mode.
 https://peter.sh/experiments/chromium-command-line-switches/
+
+### Clone SD Card and shink to share or even use less space
+https://mtyka.github.io/raspberrypi/2019/07/25/shrink-raspberrypi-image.html
+
+https://medium.com/@kitze/%EF%B8%8F-from-react-to-an-electron-app-ready-for-production-a0468ecb1da3
+

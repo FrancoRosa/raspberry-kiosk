@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useKey from '../js/useKey';
 import ListItem from './ListItem';
 import { useHistory } from "react-router-dom";

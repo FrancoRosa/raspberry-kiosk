@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -33,7 +34,7 @@ code {
 }
 
 .image {
-  height: 480px;
+  height: 100vh;
 }
 
 .selected {
