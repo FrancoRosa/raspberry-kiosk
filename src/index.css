@@ -92,6 +92,25 @@ button {
   padding: 0.2em;
 }
 
+.battery__status {
+  position: fixed;
+  top: 0.5em;
+  right: 1em;
+}
+
+.battery__status > img {
+  object-fit: contain;
+  width: 2.4em;
+}
+
+.battery__status > p {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -1.95em;
+  text-align: center;
+}
+
 svg {
   font-size: 1.7em !important;
 }
