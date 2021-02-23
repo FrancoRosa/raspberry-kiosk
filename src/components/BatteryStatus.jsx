@@ -1,18 +1,25 @@
 import axios from 'axios';
+import { useState } from 'react';
 import { useEffect } from 'react';
 
-const getBatteryLevel = () => {
-  console.log('Kill me');
-}
+
 
 const BatteryStatus = () => {
+  const [battery, setBattery] = useState('0')
+  
+  const getBatteryLevel = () => {
+    const url = 'http://localhost:9999/api/v1/value'
+    axios.get(url).then(response => setBattery(response.data.value))
+  }
+
   useEffect(() => {
-    setInterval(getBatteryLevel, 1000)
+    setInterval(getBatteryLevel, 5000)
   }, []);
+  
   return(
     <div className="battery__status">
       <img src="/icons/battery.png" alt="" srcset=""/>
-      <p>100</p>
+      <p>{battery}%</p>
     </div>
   )
 }

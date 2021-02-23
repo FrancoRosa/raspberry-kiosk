@@ -100,16 +100,16 @@ button {
 
 .battery__status > img {
   object-fit: contain;
-  width: 2.4em;
+  width: 2.5em;
 }
 
 .battery__status > p {
   position: relative;
   margin: 0;
   padding: 0;
-  top: -2.3em;
+  top: -2.6em;
   text-align: center;
-  font-size: .8em;
+  font-size: .7em;
 }
 
 svg {
