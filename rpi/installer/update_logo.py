@@ -29,9 +29,10 @@ def move_update():
     system('sudo rm -r /boot/build');
     system('sudo cp -r /media/pendrive/update/* /boot/');
 
-update_logo()
 if usb_available():
     create_mount_folder()
     mount_pendrive()
     if update_folder_present():
         move_update()
+
+update_logo()

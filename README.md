@@ -55,6 +55,49 @@ sudo dtc -I dts -O dtb -o /boot/overlays/breadboard.dtbo breadboard.dts
 You can find more information following this link
 https://blog.geggus.net/2017/01/setting-up-a-gpio-button-keyboard-on-a-raspberry-pi/
 
+## Battery Metering
+
+If you are powering your device with bateries you can add the power meter feature with an ADC.
+
+We are using a ADS1115 module with the fo9llowing connections
+
+### Hardware
+
+|RPI Pinout      | ADS1115 |Description|
+|----------------|---------|------------|
+|3.3V      (pin1)| VDD     | -------- |
+|GND (pin6,14,20)| GND     | -------- |
+|GPIO2 SDA (pin3)| SDA     | -------- |
+|GPIO3 SCL (pin5)| SCL     | -------- |
+|GND (pin6,14,20)| ADDR    | -------- |
+|---             | A0      | To resistor voltage divisor |
+
+### Voltage to baterry percentage
+We will use this table as reference
+|Voltage      | Percentage |
+|-------------|---------   |
+|      3.27   |        0   |        
+|      3.69   |       10   |        
+|      3.73   |       20   |        
+|      3.77   |       30   |        
+|      3.8    |       40   |        
+|      3.84   |       50   |        
+|      3.87   |       60   |        
+|      3.95   |       70   |        
+|      4.02   |       80   |        
+|      4.11   |       90   |        
+|      4.2    |      100   |        
+
+We used https://mycurvefit.com/  ()to apply a curve fiting algoritm to obtain the following formula
+```
+y = 122.3852 + (0.07531401 - 122.3852)/(1 + (x/3.681646)^129.1279)^0.09606746
+```
+where x is the voltage obtained and y the calculated percentage, on python code it should look like:
+```python
+y = 122.3852 + (0.07531401 - 122.3852)/(1 + (x/3.681646)**129.1279)**0.09606746
+```
+
+
 ## Sources
 ### Customize boot
 
