@@ -9,7 +9,7 @@ import BatteryStatus from './BatteryStatus';
 const App = () => {
   return (
     <div>
-      {/* <BatteryStatus /> */}
+      <BatteryStatus />
       <Switch>
         <Route path="/vid/:id" component={Video} />
         <Route path="/pdf/:id" component={Pdf} />

@@ -44,21 +44,11 @@ const Pdf = ({ history }) => {
   }
 
   const prevPage = () => {
-    if (zoom > 1) {
-      let page = document.querySelector('.react-pdf__Page__canvas');
-      page.scrollBy(-10, 0)
-    } else {
-      document.querySelector('#prev').click()
-    }
+    document.querySelector('#prev').click()
   }
   
   const nextPage = () => {
-    if (zoom > 1) {
-      let page = document.querySelector('.react-pdf__Page__canvas');
-      page.scrollBy(10, 0)
-    } else {
-      document.querySelector('#next').click()
-    }
+    document.querySelector('#next').click()
   }
 
   const scrollUp = () => {
@@ -105,7 +95,7 @@ const Pdf = ({ history }) => {
         onLoadSuccess={onDocumentLoadSuccess}
         className="document-status"
       >
-        <Page pageNumber={pageNumber} height={480} scale={zoom} onClick={debug}/>
+        <Page pageNumber={pageNumber} height={480} scale={zoom} onClick={debug} className="document_page"/>
       </Document>
       <p className="page-number">Page {pageNumber} of {numPages}</p>
       <div className="pdf-controls">
