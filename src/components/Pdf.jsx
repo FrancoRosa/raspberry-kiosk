@@ -1,15 +1,14 @@
-// import pdf from '../pdf/prof.pdf';
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useParams } from 'react-router-dom';
 import useKey from '../js/useKey';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.js';
-// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const Pdf = ({ history }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [zoom, setZoom] = useState(1);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
@@ -34,23 +33,70 @@ const Pdf = ({ history }) => {
     }
   }
 
-  const returnToMenu = () => {
-    history.push('/pdfs');
+  const returnToMenuOrZoomOut = () => {
+    if (zoom == 1) history.push('/pdfs');
+    setZoom(zoom-1);
+  }
+
+  const zoomInPage = () => {
+    if (zoom < 4)
+    setZoom(zoom+1);
   }
 
   const prevPage = () => {
-    document.querySelector('#prev').click()
+    if (zoom > 1) {
+      let page = document.querySelector('.react-pdf__Page__canvas');
+      page.scrollBy(-10, 0)
+    } else {
+      document.querySelector('#prev').click()
+    }
   }
   
   const nextPage = () => {
-    document.querySelector('#next').click()
+    if (zoom > 1) {
+      let page = document.querySelector('.react-pdf__Page__canvas');
+      page.scrollBy(10, 0)
+    } else {
+      document.querySelector('#next').click()
+    }
+  }
+
+  const scrollUp = () => {
+    if (zoom > 1) {
+      let onZoom = document.querySelector('.document-status');
+      onZoom.scrollBy({
+        top: -100,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
   }
   
+  const scrollDown = () => {
+    if (zoom > 1) {
+      let onZoom = document.querySelector('.document-status');
+      onZoom.scrollBy({
+        top: +100,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
+  
+  const debug = () => {
+    let x = document.querySelector('.document-status');
+    console.log('height:', x.scrollHeight)
+    console.log('width:', x.scrollWidth)
+  }
+
   const {id} = useParams();
 
-  useKey("KeyO", returnToMenu);
+  useKey("KeyO", returnToMenuOrZoomOut);
   useKey("KeyA", prevPage);
   useKey("KeyD", nextPage);
+  useKey("KeyW", scrollUp);
+  useKey("KeyS", scrollDown);
+  useKey("KeyP", zoomInPage);
 
   return (
     <div className="container">
@@ -59,7 +105,7 @@ const Pdf = ({ history }) => {
         onLoadSuccess={onDocumentLoadSuccess}
         className="document-status"
       >
-        <Page pageNumber={pageNumber} height={480}/>
+        <Page pageNumber={pageNumber} height={480} scale={zoom} onClick={debug}/>
       </Document>
       <p className="page-number">Page {pageNumber} of {numPages}</p>
       <div className="pdf-controls">
