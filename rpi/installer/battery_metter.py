@@ -17,7 +17,7 @@ def home():
 
 @app.route('/api/v1/value', methods=['GET'])
 def api_save_data():
-  value = 2*adc.read_adc(0, gain=GAIN, data_rate=128)*0.0000625
+  value = 2*adc.read_adc_difference(0, gain=GAIN, data_rate=128)*0.0000625
   percentage = int(122.3852 + (0.07531401 - 122.3852)/(1 + (value/3.681646)**129.1279)**0.09606746)
   if percentage > 100 : percentage = 100 
   if percentage < 0 : percentage = 0 

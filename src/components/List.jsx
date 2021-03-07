@@ -18,6 +18,8 @@ const List = ({ category }) => {
         return files.vid;
       case 'fig':
         return files.fig;
+      case 'h5p':
+        return files.h5p;
       default:
         return;
     }

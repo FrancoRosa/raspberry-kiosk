@@ -34,7 +34,7 @@ const Pdf = ({ history }) => {
   }
 
   const returnToMenuOrZoomOut = () => {
-    if (zoom == 1) history.push('/pdfs');
+    if (zoom === 1) history.push('/pdfs');
     setZoom(zoom-1);
   }
 

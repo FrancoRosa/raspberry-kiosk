@@ -12,9 +12,9 @@ const BatteryStatus = () => {
     axios.get(url).then(response => setBattery(response.data.value))
   }
 
-  useEffect(() => {
-    setInterval(getBatteryLevel, 5000)
-  }, []);
+  // useEffect(() => {
+  //   setInterval(getBatteryLevel, 5000)
+  // }, []);
   
   return(
     <div className="battery__status">

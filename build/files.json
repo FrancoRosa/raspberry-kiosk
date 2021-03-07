@@ -1,1 +1,35 @@
-{"js": ["pdf.worker.js", "files.json"], "icons": ["vid-icon.png", "fig-icon.png", "pdf-icon.png"], "pdf": ["guide.pdf", "automata.pdf"], "fig": ["animal.jpg", "landscape.jpg", "penguin.jpeg"], "vid": ["watermelon.mp4", "animation.mp4"], "thumbs": ["automata.pdf.png", "watermelon.mp4.png", "landscape.jpg.png", "penguin.jpeg.png", "animation.mp4.png", "guide.pdf.png"]}
+{
+  "js": [
+    "pdf.worker.js",
+    "files.json"
+  ],
+  "icons": [
+    "vid-icon.png",
+    "fig-icon.png",
+    "pdf-icon.png"
+  ],
+  "pdf": [
+    "guide.pdf",
+    "automata.pdf"
+  ],
+  "fig": [
+    "animal.jpg",
+    "landscape.jpg",
+    "penguin.jpeg"
+  ],
+  "vid": [
+    "watermelon.mp4",
+    "animation.mp4"
+  ],
+  "h5p": [
+    "urbangardens.h5p"
+  ],
+  "thumbs": [
+    "automata.pdf.png",
+    "watermelon.mp4.png",
+    "landscape.jpg.png",
+    "penguin.jpeg.png",
+    "animation.mp4.png",
+    "guide.pdf.png"
+  ]
+}
