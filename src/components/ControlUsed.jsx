@@ -1,8 +1,19 @@
-const ControlUsed = ({ keyPressed }) => {
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+const ControlUsed = ({ control }) => {
+  
+  useEffect(()=>{console.log('XX>> ',control)},[])
+
   return(
     <p className="control-used">
-      {keyPressed}
+      {control}
     </p>
   )
 }
-export default ControlUsed;
+
+const mapStateToProps = state => ({
+  control: state.control,
+})
+
+export default connect(mapStateToProps)(ControlUsed);
