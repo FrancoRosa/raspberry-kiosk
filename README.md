@@ -97,6 +97,16 @@ where x is the voltage obtained and y the calculated percentage, on python code 
 y = 122.3852 + (0.07531401 - 122.3852)/(1 + (x/3.681646)**129.1279)**0.09606746
 ```
 
+## Update Content by USB
+In order to Update the media displayed on the device, you should take the following steps:
+1. Get a pendrive and create a folder with the name ```update```.
+2. Inside the update folder insert the ```build``` folder attached.
+3. The ```build``` folder should contain the media you want to display on its respetive folder. For instance, pdf files should be on ```pdf``` folder, video files on ```vid``` and so on.
+4. Insert the pendrive on the RPi, and reboot it.
+When the RPI boots, looks for the update folder and copies the files into its SD card. 
+
+
+
 
 ## Sources
 ### Customize boot
