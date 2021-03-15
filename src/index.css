@@ -119,14 +119,12 @@ svg {
 
 .control-used {
   position: fixed;
-  top: 10;
-  left: 10;
-  background: red;
-  height: 30px;
-  width: 30px;
+  top: 0;
+  left: 0;
+  margin: .1em;
+  font-size: 1em;
 }
 
-.control-used > p {
-  color: black;
-  font-size: 2em;
+.hidden{
+  display: none
 }
