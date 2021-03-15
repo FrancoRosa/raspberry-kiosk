@@ -116,3 +116,17 @@ button {
 svg {
   font-size: 1.7em !important;
 }
+
+.control-used {
+  position: fixed;
+  top: 10;
+  left: 10;
+  background: red;
+  height: 30px;
+  width: 30px;
+}
+
+.control-used > p {
+  color: black;
+  font-size: 2em;
+}
