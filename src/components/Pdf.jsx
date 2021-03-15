@@ -59,6 +59,8 @@ const Pdf = ({ history }) => {
         left: 0,
         behavior: 'smooth'
       })
+    } else {
+      prevPage();
     }
   }
   
@@ -70,6 +72,8 @@ const Pdf = ({ history }) => {
         left: 0,
         behavior: 'smooth'
       })
+    } else {
+      nextPage();
     }
   }
   
