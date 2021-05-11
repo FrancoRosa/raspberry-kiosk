@@ -2,33 +2,30 @@
 
 from wand.image import Image
 from wand.display import display
+from wand.color import Color
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-fileDirectory = BASE_DIR.split('rpi')[0]+'\public\pdf'
+fileDirectory = BASE_DIR.split('rpi')[0]+'/public/pdf/'
+thumbDirectory = BASE_DIR.split('rpi')[0]+'/public/thumbs/'
 infiles = os.listdir(fileDirectory)
-outFileName="outfile.png"
+print('infiles:', infiles)
 
 for file in infiles:
-  file_path = fileDirectory + '\\' + file
-
+  file_path = fileDirectory + file+ '[0]'
+  print(file_path)  
   imageFromPdf = Image(filename=file_path)
-
-  pages = len(imageFromPdf.sequence)
-  print(pages)
 
   image = Image(
       width=imageFromPdf.width,
-      height=imageFromPdf.height * pages
+      height=imageFromPdf.height
   )
 
-  for i in range(pages):
-      image.composite(
-          imageFromPdf.sequence[i],
-          top=imageFromPdf.height * i,
-          left=0
-      )
-
+  image.composite(
+     imageFromPdf.sequence[0],
+     top=0,
+     left=0
+  )
+  image.background_color = Color('white')
   image.format="png"
-  image.save(filename=fileDirectory+file)
-
-  display(image)
+  image.save(filename = thumbDirectory + file + '.png')

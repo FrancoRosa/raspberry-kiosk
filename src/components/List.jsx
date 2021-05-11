@@ -53,8 +53,8 @@ const List = ({ category }) => {
     history.push('/');
   }
 
-  useKey("KeyA", prevItem);
-  useKey("KeyD", nextItem);
+  useKey("KeyS", prevItem);
+  useKey("KeyW", nextItem);
   useKey("KeyP", selectItem);
   useKey("KeyO", returnToMenu);
 

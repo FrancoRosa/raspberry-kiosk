@@ -25,6 +25,7 @@ const Home  = ({ setControl }) => {
   
   useKey("KeyA", prevItem);
   useKey("KeyD", nextItem);
+  
   useKey("KeyP", selectItem);
   
   useKey("KeyO", () => setControl('o'));

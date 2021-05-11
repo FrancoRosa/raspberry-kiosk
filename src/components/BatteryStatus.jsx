@@ -2,8 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
-
 const BatteryStatus = () => {
   const [battery, setBattery] = useState('0')
   

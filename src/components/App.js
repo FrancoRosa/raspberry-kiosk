@@ -13,8 +13,8 @@ const App = () => {
 
   return (
     <div>
-      <BatteryStatus />
-      <ControlUsed />
+      {/* <BatteryStatus /> */}
+      {/* <ControlUsed /> */}
       <Switch>
         <Route path="/vid/:id" component={Video} />
         <Route path="/pdf/:id" component={Pdf} />
