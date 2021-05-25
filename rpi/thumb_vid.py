@@ -1,8 +1,8 @@
 import subprocess
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-fileDirectory = BASE_DIR.split('rpi')[0]+'/public/vid/'
-thumbDirectory = BASE_DIR.split('rpi')[0]+'/public/thumbs/'
+fileDirectory = BASE_DIR.split('rpi')[0]+'/build/vid/'
+thumbDirectory = BASE_DIR.split('rpi')[0]+'/build/thumbs/'
 infiles = os.listdir(fileDirectory)
 print('infiles:', infiles)
 
